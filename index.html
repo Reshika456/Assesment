@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
@@ -7,7 +8,10 @@
 
 <body>
 
+<div class="theme-toggle">Toggle Theme</div>
+
 <main>
+
     <h2>Hello I'm</h2>
     <h1>Reshika Karki</h1>
 
@@ -16,21 +20,48 @@
         Biratnagar International College.
     </aside>
 
-    <img src="profile.jpg.jpg" width="150px">
+    <!-- PROFILE IMAGE -->
+    <img src="profile.jpg.jpg" class="profile-img" alt="Profile Image">
 
-    <button>About me</button>
-    <button>Project</button>
+    <!-- SHORT NOTE ABOUT FLEXBOX vs GRID -->
+<h2 class="section-title">Flexbox vs Grid (Short Note)</h2>
+<p class="layout-note">
+    Flexbox is used for one-dimensional layouts (either row or column), 
+    whereas Grid is used for two-dimensional layouts (rows AND columns). 
+    Flexbox is best for aligning items in a line, while Grid is best for 
+    full-page or section layouts.
+</p>
+    <!-- ABOUT ME -->
+    <h2 class="section-title">About Me</h2>
 
-    <h2>About Me</h2>
     <p>
-        Hello! My name is Reshika Karki, and I am currently a 2nd-year BSc (Hons) Computer Science 
-        student at Biratnagar International College. I am continuing to grow my skills in programming 
-        and web development. I have a good understanding of HTML and I am learning CSS, JavaScript, 
-        and other IT concepts. I am passionate about improving my knowledge and exploring new areas 
-        in the field of technology.
+        Hello! I’m Reshika Karki, a 2nd-year BSc (Hons) Computer Science student at 
+        Biratnagar International College. I am passionate about programming and web 
+        development, and I enjoy learning new technologies to improve my skills.
+        I am hardworking, motivated, and always excited to explore more in the field of IT.
     </p>
 
+    <!-- SKILLS -->
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skill-bar">
+        <p>HTML</p>
+        <div class="bar"><div class="fill" data-width="90%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <p>CSS</p>
+        <div class="bar"><div class="fill" data-width="75%"></div></div>
+    </div>
+
+    <div class="skill-bar">
+        <p>JavaScript</p>
+        <div class="bar"><div class="fill" data-width="60%"></div></div>
+    </div>
+
+    <!-- QUALIFICATION -->
     <h1>Qualification</h1>
+
     <table>
         <thead>
             <tr>
@@ -65,30 +96,89 @@
         </tbody>
     </table>
 
-    <h1>Interests</h1>
+    <!-- PROJECTS -->
+    <h1>My Projects</h1>
 
-    <div class="interest-section-0">
-        <h2>Interest 1</h2>
-        <p>I am learning basic HTML and CSS to create simple web pages.</p>
+    <div class="projects">
+
+        <div class="project">
+            <img src="weatherapp.jpg" width="250" alt="Weather App">
+            <h3>My Project 1 (Weather App)</h3>
+            <a href="https://reshika456.github.io/weatherapp/" target="_blank">Open Project</a>
+        </div>
+
+        <div class="project">
+            <a href="https://reshika456.github.io/Assesment/" target="_blank">
+                <img src="myportfolio.jpg" width="250" alt="My Portfolio">
+                <h3>My Project 2 (My Portfolio)</h3>
+                Open Project
+            </a>
+        </div>
+
     </div>
 
-    <div class="interest-section-0">
-        <h2>Interest 2</h2>
-        <p>I am learning programming and understanding how coding works as a beginner.</p>
+    <!-- MEDIA -->
+    <h1>Media Section</h1>
+
+    <video width="320" controls>
+        <source src="video.mp4" type="video/mp4">
+    </video>
+
+    <audio controls>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- CANVAS -->
+    <canvas id="myCanvas" width="300" height="200"></canvas>
+
+    <script>
+        const c = document.getElementById("myCanvas");
+        const ctx = c.getContext("2d");
+
+        ctx.fillStyle = "lightblue";
+        ctx.fillRect(20, 20, 260, 150);
+
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 3;
+        ctx.strokeRect(20, 20, 260, 150);
+
+        ctx.font = "28px Arial";
+        ctx.fillStyle = "purple";
+        ctx.fillText("Hello Reshika", 50, 120);
+    </script>
+
+    <!-- IMAGE SLIDER -->
+    <h1>Image Slider</h1>
+
+    <div class="slider">
+        <img id="slide-img" src="slide1.jpg" alt="Slide">
+        <div class="slide-btn" id="prev">Prev</div>
+        <div class="slide-btn" id="next">Next</div>
     </div>
 
-    <div class="interest-section-0">
-        <h2>Interest 3</h2>
-        <p>I enjoy learning about computers and exploring new technology.</p>
+    <!-- CONTACT FORM -->
+    <h2 class="section-title">Contact Form</h2>
+
+    <div class="contact-box">
+        <form id="contactForm">
+            <input id="name" type="text" placeholder="Enter Name" required>
+            <input id="email" type="email" placeholder="Enter Email" required>
+            <textarea id="message" rows="4" placeholder="Enter Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
     </div>
 
 </main>
+
+<div id="topBtn">↑</div>
 
 <footer>
     <div class="Left">
         <p>© Reshika Karki</p>
     </div>
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

@@ -1,125 +1,314 @@
-body {
-    font-family: 'Poppins', Arial, sans-serif;
+/* ---------------- GLOBAL STYLE ---------------- */
+* {
     margin: 0;
     padding: 0;
-    background: #f0f4ff;
-    color: #1a1a1a;
+    box-sizing: border-box;
 }
 
-header {
-    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
-    padding: 18px 0;
-    text-align: center;
-    color: white;
-}
-
-nav a {
-    color: white;
-    margin: 0 12px;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-nav a:hover {
-    color: #dbeafe;
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5f7fa;
+    color: #111;
+    line-height: 1.7;
 }
 
 main {
-    width: 80%;
-    margin: 40px auto;
+    width: 85%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+/* ---------------- SECTION TITLE (UPDATED) ---------------- */
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #153E90;
+    margin: 40px 0 20px;
+    padding: 12px 22px;
     background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.08);
+    display: inline-block;
+    border-left: 6px solid #2563eb;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
-h1, h2 {
-    color: #1e3a8a;
-    margin-bottom: 10px;
-    font-weight: 600;
+/* ---------------- HEADINGS (CLEAN & CONSISTENT) ---------------- */
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #153E90;
 }
 
-aside {
-    background: #e5edff;
-    padding: 12px;
-    border-left: 5px solid #1e3a8a;
-    border-radius: 8px;
-    margin-bottom: 20px;
+h1 { font-size: 24px; }
+h2 { font-size: 20px; margin-top: 30px; }
+h3 { font-size: 18px; }
+
+/* ---------------- TEXT ---------------- */
+p {
+    font-size: 18px;
+    margin-bottom: 14px;
+    color: #334155;
 }
 
-img {
-    margin-top: 15px;
-    border-radius: 12px;
-    box-shadow: 0px 3px 12px rgba(0,0,0,0.15);
-}
-
-button {
-    padding: 10px 16px;
-    margin: 8px 8px 15px 0;
-    background: #1e3a8a;
+/* ---------------- THEME BUTTON ---------------- */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #153E90;
     color: white;
-    border: none;
-    border-radius: 8px;
+    padding: 12px 20px;
+    border-radius: 10px;
     cursor: pointer;
-    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.theme-toggle:hover { transform: scale(1.07); }
+
+/* ---------------- INTRO BOX ---------------- */
+.intro-box {
+    width: fit-content;
+    background: #E8F0FF;
+    padding: 18px 25px;
+    border-radius: 15px;
+    font-size: 20px;
+    margin-top: 10px;
+    color: #0f172a;
+}
+
+/* ---------------- LAYOUT ---------------- */
+.intro-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+/* ---------------- PROFILE IMAGE ---------------- */
+.profile-img {
+    width: 260px;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     transition: 0.3s;
 }
 
-button:hover {
-    background: #3b82f6;
-    transform: translateY(-2px);
+.profile-img:hover { transform: scale(1.02); }
+
+/* ---------------- BUTTONS ---------------- */
+.intro-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
-table {
+.main-btn {
+    padding: 14px 30px;
+    font-size: 20px;
+    background: white;
+    border: none;
+    border-radius: 12px;
+    color: #0f172a;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-left: 6px solid #2563eb;
+    transition: 0.3s;
+}
+
+.main-btn:hover { transform: translateX(6px); }
+
+/* ---------------- PROJECT CARDS ---------------- */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, max-content));
+    justify-content: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.project {
+    width: 320px; 
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* ---------------- SKILL BAR ---------------- */
+.skill-bar { margin: 20px 0; }
+
+.bar {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 15px;
+    height: 12px;
+    background: #e2e8f0;
     border-radius: 8px;
     overflow: hidden;
 }
 
-table th {
-    background: #1e3a8a;
-    color: white;
-    padding: 12px;
-    font-weight: 600;
+.fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    width: 0%;
+    border-radius: 8px;
+    transition: width 1.4s ease;
 }
 
-table td {
-    padding: 12px;
+/* ---------------- TABLE ---------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+th {
+    background: #1d4ed8;
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+}
+
+td {
+    padding: 14px;
+    background: white;
+    font-size: 15px;
     border-bottom: 1px solid #e2e8f0;
 }
 
-table tr:nth-child(even) {
-    background: #f8faff;
-}
-
-.interest-section-0 {
-    background: #f0f5ff;
-    padding: 18px;
+/* ---------------- IMAGE SLIDER ---------------- */
+.slider {
+    width: 400px;
     margin-top: 20px;
-    border-left: 6px solid #1e3a8a;
-    border-radius: 10px;
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.05);
+    position: relative;
 }
 
-.interest-section-0 h2 {
-    margin-top: 0;
-    font-size: 20px;
-    color: #1e3a8a;
+.slider img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-footer {
-    text-align: center;
-    background: #1e3a8a;
+.slide-btn {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    padding: 12px;
+    background: #0f172a;
     color: white;
-    padding: 12px 0;
-    margin-top: 40px;
-    font-size: 15px;
-    font-weight: 500;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.25s ease;
 }
 
-footer p {
-    margin: 0;
+.slide-btn:hover {
+    transform: translateY(-50%) scale(1.15);
 }
+
+#prev { left: 12px; }
+#next { right: 12px; }
+
+/* ---------------- CONTACT ---------------- */
+.contact-box {
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+    backdrop-filter: blur(8px);
+}
+
+.contact-box input,
+.contact-box textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.contact-box input:focus,
+.contact-box textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 8px rgba(37,99,235,0.4);
+}
+
+.contact-box button {
+    padding: 12px 25px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.contact-box button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* ---------------- BACK TO TOP ---------------- */
+#topBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #2563eb;
+    color: white;
+    font-size: 22px;
+    padding: 14px 16px;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    transition: 0.25s ease;
+}
+
+#topBtn:hover { transform: scale(1.15); }
+
+/* ---------------- DARK MODE ---------------- */
+.dark { background: #0f0f0f; color: white; }
+.dark p { color: #e2e2e2; }
+
+.dark .theme-toggle {
+    background: #facc15;
+    color: #111;
+}
+
+.dark .project {
+    background: rgba(40,40,40,0.8);
+    box-shadow: 0 8px 25px rgba(255,255,255,0.08);
+}
+
+.dark .project:hover { background: rgba(60,60,60,0.95); }
+
+.dark table td {
+    background: #1e1e1e;
+    color: #ddd;
+}
+
+.dark table th { background: #333; }
